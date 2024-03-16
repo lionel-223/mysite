@@ -1,0 +1,104 @@
+ body{  
+    font-family: 'Poppins', sans-serif;  
+  }  
+  .container{  
+    max-width: 1152px;  
+    padding: 0 15px;  
+    margin: 0 auto;  
+  }  
+  .hero{ 
+    padding-top: 2rem;  
+    padding-bottom: 3rem;  
+  }  
+  .hero .left img{  
+    width: 450px;  
+    align-items: center;
+    margin-left: 147.5;
+  }  
+  .img{  
+    width: 450px;  
+    text-align: center;
+    margin-left: 147.5;
+  }  
+  .hero .right {  
+    color: var(--white);  
+    margin-top: -7rem;  
+  }  
+  .hero .right h6 a{   
+    text-decoration: none;  
+    font-size: 1.6rem;  
+    color: var(--primary); 
+  }  
+  .hero .right h1{  
+    font-size: 4rem;  
+    font-weight: 100;  
+    line-height: 1.2;  
+    margin-bottom: 2rem;  
+  }  
+  .hero .right h1 span{  
+    color: var(--primary);  
+  }  
+  .hero .right p{  
+    line-height: 1.9;  
+    margin-bottom: 2rem;  
+  }  
+  .flex{  
+    background: var(--tirtiary);
+    display: flex;  
+  }  
+  .items-centre{  
+    align-items: center;  
+  }  
+  .justify-between{  
+    justify-content: space-between;  
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  }  
+  .justify-center{  
+     justify-content: center;  
+  }  
+  .justify-right{  
+    justify-content: right;  
+  }  
+  .btn{  
+    padding: 0.6rem 2rem;  
+    font-size: 1rem;  
+    font-weight: 600;  
+    border: 2px solid transparent;  
+    outline: none;  
+    cursor: pointer;  
+    text-transform: uppercase;  
+    transition: all .2s ease;  
+  }  
+  .btn-primary{  
+    background-color: var(--primary);  
+    color: var(--secondary);  
+    margin-top: -15rem;  
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  }  
+  .btn-primary:hover{  
+    background: transparent;  
+    border-color: var(--primary);  
+    color: var(--primary);  
+  }  
+  .flex-1{ 
+    flex: 1;  
+  }  
+  .petit{ 
+    width: 180px;  
+  } 
+  .droite{ 
+    text-align: right;  
+  } 
+  .btn-secondary{  
+    background: var(--primary);  
+    color: var(--primary);  
+    border-color: var(--primary);  
+  }  
+  .btn-secondary a{   
+    text-decoration: none;    
+    color: var(--white);  
+  }  
+  .btn-secondary:hover{  
+    background: transparent;  
+    color: var(--secondary);  
+  }  
