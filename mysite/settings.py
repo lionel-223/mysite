@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "2_8dm8$#rp$nj^vfe28qpu^b8k1ew4bws_e&d+xn(jk116*rbz"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # strengthens the security of the Django application by preventing CSRF attacks via a secure cookie.
 CSRF_COOKIE_SECURE = True
@@ -114,7 +114,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Collects static files for production
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/var/www/static/',
 ]
 
 

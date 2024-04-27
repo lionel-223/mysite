@@ -45,40 +45,74 @@
   </svg>
   
 <body>  
- <header>  
-   <div class="container">  
-     <nav class="flex items-centre justify-between">  
-         <div class="left flex justfiy-right">  
-         <div class="logo">  
-           <img src="/static/img/logo_large.png" width="150px" alt="logo">  
-         </div>  
-         <div>  
-           <a href="index.html">Home</a>  
-           <a href="veille.html">Veille techno</a>  
-           <a href="blogs.html">Blog</a>  
-           <a href="portfolio.html">Portfolio</a>
-           <select id="menu" name="menu" class="btn btn-primary petit">
-             <option value="#">Mon compte</option>
-             <optgroup label="Paramètres">
-               <option value="#">Changer mon mot de passe</option>
-               <option value="#">Changer mon adresse e-mail</option>
-             </optgroup>
-             <optgroup label="Profil">
-               <option value="#">Changer ma photo de profil</option>
-               <option value="#">Supprimer mon compte</option>
-             </optgroup>
-           </select>
+    <header>  
+      <div class="container">  
+        <nav class="flex items-centre justify-between">  
+           <div class="left flex justfiy-right">  
+            <div class="logo">  
+              <img src="/static/img/logo_large.png" width="150px" alt="logo">  
+            </div> 
             
-         </div>  
-       </div>  
-       <div class="right">  
-         <form name="myForm" action="contact.html" onsubmit="return validateForm()" method="post">
-         <button class="btn btn-primary">Contact</button> 
-       </form> 
-       </div>  
-     </nav>
-   </div> 
- </header>  
+            
+           <div class="resp1">
+             <div>
+              <a href="index.html">Home</a>  
+              <a href="veille.html">Veille techno</a>  
+              <a href="blogs.html">Blog</a>  
+              <a href="portfolio.html">Portfolio</a>
+             </div>
+             <div>
+              <select id="menu" name="menu" class="btn btn-primary petit">
+                <option value="#">Mon compte</option>
+                <optgroup label="Paramètres">
+                  <option value="#">Changer mon mot de passe</option>
+                  <option value="#">Changer mon adresse e-mail</option>
+                </optgroup>
+                <optgroup label="Profil">
+                  <option value="#">Changer ma photo de profil</option>
+                  <option value="#">Supprimer mon compte</option>
+                </optgroup>
+              </select>
+             </div>
+           <div>
+            <form name="myForm" action="contact.html" onsubmit="return validateForm()" method="post">
+            <button class="btn btn-primary">Contact</button> 
+            </form> 
+           </div>
+           </div> 
+   
+         <div class="resp2">
+           <div>
+             <a href="index.html">Home</a>  
+             <a href="veille.html">Veille techno</a>  
+             <a href="blogs.html">Blog</a>  
+             <a href="portfolio.html">Portfolio</a>
+           </div>
+             <div>
+             <select id="menu" name="menu" class="btn btn-primary petit">
+               <option value="#">Mon compte</option>
+               <optgroup label="Paramètres">
+                 <option value="#">Changer mon mot de passe</option>
+                 <option value="#">Changer mon adresse e-mail</option>
+               </optgroup>
+               <optgroup label="Profil">
+                 <option value="#">Changer ma photo de profil</option>
+                 <option value="#">Supprimer mon compte</option>
+               </optgroup>
+             </select>
+           </div>
+             <div>
+             <form name="myForm" action="contact.html" onsubmit="return validateForm()" method="post">
+             <button class="btn btn-primary">Contact</button>
+             </form>
+            </div>
+          </div> 
+         
+         
+         </div>
+        </nav>
+      </div> 
+ </header>   
  {% block content %}{% endblock %}
  <section class="services">  
    <div class="container">  
