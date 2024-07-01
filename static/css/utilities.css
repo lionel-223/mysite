@@ -72,7 +72,7 @@
   .btn-primary{  
     background-color: var(--primary);  
     color: var(--secondary);  
-    margin-top: -15rem;  
+    margin-top: auto;  
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
   }  
   .btn-primary:hover{  
@@ -105,13 +105,17 @@
   @media all and (max-width: 860px) {
     body{  
       font-family: 'Poppins', sans-serif;  
-      width: 600px
-    }  
+      width: auto;
+      font-size: 12px;
+       }  
     .container{  
       max-width: 600px;  
       padding: 0 15px;  
       margin: 0 auto;  
-    }  
+    } 
+      #smile {  
+    display: none;  
+    }   
     .hero{ 
       padding-top: 4rem;  
       padding-bottom: 2rem;  
@@ -179,7 +183,7 @@
     .btn-primary{  
       background-color: var(--primary);  
       color: var(--secondary);  
-      margin-top: -15rem;  
+      margin-top: auto;  
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
     }  
     .btn-primary:hover{  

@@ -18,22 +18,28 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+LOGIN_REDIRECT_URL = '/operations/'
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "2_8dm8$#rp$nj^vfe28qpu^b8k1ew4bws_e&d+xn(jk116*rbz"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # strengthens the security of the Django application by preventing CSRF attacks via a secure cookie.
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
 
 # strengthens application security by preventing attackers from intercepting user sessions via a secure cookie only.
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 
 # automatic redirection to HTTPS for all incoming connections
 SECURE_SSL_REDIRECT = False
 
 ALLOWED_HOSTS = ["1ldmind.com", "127.0.0.1", "51.75.16.153"]
+CSRF_TRUSTED_ORIGINS = ['https://1ldmind.com']
 
 # Application definition
 
@@ -82,8 +88,12 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": 'base_ld',
+        'USER': 'oasys',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -116,6 +126,13 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'lionelmonthe184@gmail.com'
+EMAIL_HOST_PASSWORD = 'snhdjcpwxttpingg'
+DEFAULT_FROM_EMAIL = '1ldmind'
 
 # Default primary key field type
 

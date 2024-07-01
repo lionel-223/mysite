@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class ArticlesDePresse(models.Model):
     Id_Articles = models.AutoField(primary_key=True)
@@ -28,6 +29,8 @@ class Utilisateurs(models.Model):
     date_souscription = models.DateField()
     mailng = models.BooleanField()
     Id_Mailing = models.ForeignKey(Mailing, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+
 
 class Simulations(models.Model):
     Id_Simulations = models.AutoField(primary_key=True)

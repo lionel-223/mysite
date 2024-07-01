@@ -1,5 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<p>Comming soon</p>
+<div class="competences">
+  <div class="grilles">
+    <a href="https://projets.1ldmind.com/" class="colonne">
+      <img src="{% static 'img/oasys.png' %}" alt="Oasys" width="90" height="90">
+      <div class="contenu">
+        <h2>App de gestion des données d'une entreprise</h2>
+        <p>Cette application permet à l'entreprise Oasys de...</p>
+      </div>
+    </a>
+    <a href="http://15.237.62.43/index.html" class="colonne">
+      <img src="https://apply.holbertonschool.com/holberton-logo.png" alt="Holberton" width="90" height="90">
+      <div class="contenu">
+         <h2>App pour candidature à holberton school</h2>
+        <p>Cette application permet à l'entreprise Oasys de...</p>
+      </div>
+    </a>
+    <a href="index.html" class="colonne">
+      <img src="{% static 'img/logo_large.png' %}" alt="Logo" width="30" height="30">
+      <div class="contenu">
+        <h2>Site de développement personnel</h2>
+        <p>Site Portfolio</p>
+      </div>
+    </a>
+  </div>
+</div>
 {% endblock %}

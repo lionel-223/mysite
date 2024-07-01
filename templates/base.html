@@ -1,18 +1,21 @@
+    {% load static %}
 <!DOCTYPE html>  
 <html lang="en">  
   <head>  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    {% load static %}
+
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">  
     <link rel="preconnect" href="https://fonts.googleapis.com">  
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"  
       rel="stylesheet">  
+    <link rel="icon" type="image/x-icon" width="32px" heigh="32px" href="/static/img/favicon.png">
     <!-- JavaScript Bundle with Popper -->
-    <script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/bootstrap.bundle.js"></script>
-    <title>Portfolio</title>   
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/resp.js' %}"></script>
+    <title>1ldmind</title>   
   </head>  
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -50,7 +53,10 @@
         <nav class="flex items-centre justify-between">  
            <div class="left flex justfiy-right">  
             <div class="logo">  
-              <img src="/static/img/logo_large.png" width="150px" alt="logo">  
+             <img src="{% static 'img/logo_large.png' %}" width="150px" alt="logo">  
+            </div> 
+           <div class="logo1">  
+             <img src="{% static 'img/logo_large.png' %}" width="50px" heigh= "50px" alt="logo">  
             </div> 
             
             
@@ -59,57 +65,77 @@
               <a href="index.html">Home</a>  
               <a href="veille.html">Veille techno</a>  
               <a href="blogs.html">Blog</a>  
-              <a href="portfolio.html">Portfolio</a>
+              <a href="operations.html">Opérations</a>
              </div>
              <div>
-              <select id="menu" name="menu" class="btn btn-primary petit">
-                <option value="#">Mon compte</option>
-                <optgroup label="Paramètres">
-                  <option value="#">Changer mon mot de passe</option>
-                  <option value="#">Changer mon adresse e-mail</option>
-                </optgroup>
-                <optgroup label="Profil">
-                  <option value="#">Changer ma photo de profil</option>
-                  <option value="#">Supprimer mon compte</option>
-                </optgroup>
-              </select>
+          <select id="menu" name="menu" class="btn btn-primary petit" onchange="location >
+             <option value="#">Mon compte</option>
+            <optgroup label="Paramètres">
+               <option>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Connexion</a></li>
+                {% endif %}
+               </option>
+             <option value="{% url 'change_password' %}">Changer mon mot de passe</o>
+            </optgroup>
+            <optgroup label="Profil">
+             <option value="{% url 'change_profile_picture' %}">Changer ma photo de >
+             <option value="{% url 'delete_account' %}">Supprimer mon compte</option>
+           </optgroup>
+          </select>
              </div>
            <div>
             <form name="myForm" action="contact.html" onsubmit="return validateForm()" method="post">
             <button class="btn btn-primary">Contact</button> 
             </form> 
            </div>
-           </div> 
-   
-         <div class="resp2">
-           <div>
-             <a href="index.html">Home</a>  
-             <a href="veille.html">Veille techno</a>  
-             <a href="blogs.html">Blog</a>  
-             <a href="portfolio.html">Portfolio</a>
            </div>
-             <div>
-             <select id="menu" name="menu" class="btn btn-primary petit">
-               <option value="#">Mon compte</option>
-               <optgroup label="Paramètres">
-                 <option value="#">Changer mon mot de passe</option>
-                 <option value="#">Changer mon adresse e-mail</option>
-               </optgroup>
-               <optgroup label="Profil">
-                 <option value="#">Changer ma photo de profil</option>
-                 <option value="#">Supprimer mon compte</option>
-               </optgroup>
-             </select>
-           </div>
-             <div>
-             <form name="myForm" action="contact.html" onsubmit="return validateForm()" method="post">
-             <button class="btn btn-primary">Contact</button>
-             </form>
-            </div>
           </div> 
+   
+           <div class="resp2 menu-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+
+          <div class="resp2 menu">
+            <div>
+              <div class="close-toggle" onclick="toggleMenu()">&times;</div>
+              <a href="index.html">Home</a>  
+              <a href="veille.html">Veille</a>  
+              <a href="blogs.html">Blog</a>  
+              <a href="operations.html">Opérations</a>
+            </div>
+            <div>
+          <select id="menu" name="menu" class="btn btn-primary petit" onchange="location >
+             <option value="#">Mon compte</option>
+            <optgroup label="Paramètres">
+               <option>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Connexion</a></li>
+                {% endif %}
+               </option>
+             <option value="{% url 'change_password' %}">Changer mon mot de passe</o>
+            </optgroup>
+            <optgroup label="Profil">
+             <option value="{% url 'change_profile_picture' %}">Changer ma photo de >
+             <option value="{% url 'delete_account' %}">Supprimer mon compte</option>
+           </optgroup>
+          </select>
+            </div>
+            <div>
+              <form name="myForm" action="contact.html" onsubmit="return validateForm()" method="post">
+                <button class="btn btn-primary">Contact</button>
+              </form>
+            </div>
+          </div>
+ 
          
          
-         </div>
         </nav>
       </div> 
  </header>   
@@ -120,7 +146,7 @@
      <p>Tout vos besoins numeriques... couvert.</p>  
      <div class="card-grid">  
        <div class="card", id="design-graphique">  
-         <img src="/static/img/graphic design1.png">  
+         <img src="{% static 'img/graphic design1.png' %}">  
          <h2>Desgin Graphique</h2>  
          <p>Voyez vos imagination se concrétiser</p>  
        </div> 
@@ -130,7 +156,7 @@
         });
        </script> 
        <div class="card", id="developpement-web">  
-         <img src="/static/img/web developpement.png">  
+         <img src="{% static 'img/web developpement.png' %}">  
          <h2>Developpement web</h2>  
          <p>Solutions divergeantes pour des besoins de métiers spécifiques</p>  
        </div>  
@@ -140,7 +166,7 @@
         });
        </script>
        <div class="card", id="redaction-de-contenu">  
-         <img src="/static/img/content writing1.png">  
+         <img src="{% static 'img/content writing1.png' %}">  
          <h2>Rédaction de contenu</h2>  
          <p>Production de contenu efficace ciblé en fonction des besoins de vos internaurtes</p>  
        </div>   
@@ -151,6 +177,86 @@
        </script>
      </div>  
    </div>  
- </section>    
+ </section>
+
+<footer class="py-5">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Sourcrivez à notre newsletter</h5>
+          <p>Vous serrez tenu informé dès la publication d'un nouvel article.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>©1ldmind</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+    {% if not request.COOKIES.cookies_accepted %}
+<!-- templates/cookie_banner.html -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #000; color: #fff; padding: 15px; text-alig>
+    <p>
+        Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant à naviguer, vous acceptez notr>
+        <a href="{% url 'privacy_policy' %}" style="color: #fff; text-decoration: underline;">En savoir plus</a>
+        <button id="accept-cookies" style="background: #007bff; color: #fff; border: none; padding: 10px 20px; cursor: pointer;>
+        <button id="decline-cookies" style="background: #d9534f; color: #fff; border: none; padding: 10px 20px; cursor: pointer>
+    </p>
+</div>
+<script>
+    document.getElementById('accept-cookies').onclick = function() {
+        document.cookie = "cookies_accepted=true; path=/";
+        document.getElementById('cookie-banner').style.display = 'none';
+    };
+    document.getElementById('decline-cookies').onclick = function() {
+        document.cookie = "cookies_accepted=false; path=/";
+        document.getElementById('cookie-banner').style.display = 'none';
+    };
+</script>    
+    {% endif %}
 </body>  
 </html>

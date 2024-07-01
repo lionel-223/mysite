@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Résoudre une équation du second degré</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="a">a:</label>
+    <input type="number" id="a" name="a" required><br>
+
+    <label for="b">b:</label>
+    <input type="number" id="b" name="b" required><br>
+
+    <label for="c">c:</label>
+    <input type="number" id="c" name="c" required><br>
+
+    <input type="submit" value="Calculer">
+</form>
+
+{% if result %}
+    <h2>Résultat:</h2>
+    <p>{{ result }}</p>
+{% endif %}
+{% endblock %}

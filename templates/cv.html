@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>cv</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <!--button class="btn btn-secondary"><a href="cv.html">DOWNLOAD CV</button></a--><!--bouton pour telecharger un document-->
-    <embed src="/static/others/CV Emrich Lionel - Alternance.pdf" width="100%" height="500px"/>  
+    <iframe src="/static/others/cv.pdf" type="application/pdf"></iframe>
 </body>
 </html>

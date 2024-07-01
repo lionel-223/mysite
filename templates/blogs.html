@@ -1,49 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Calcul de la vitesse orbitale à une altitude donnée : application de la formule de Kepler</h1>
-<u><h2>Présentation de la formule de Kepler pour calculer la vitesse orbitale</h2></u>
-<h3>L'exploration spatiale suscite l'intérêt de nombreuses personnes, et l'un des concepts les plus fondamentaux de cette discipline est la vitesse orbitale. Dans cet article, nous allons examiner comment calculer la vitesse orbitale à une altitude donnée en utilisant la formule de Kepler.</h3>
-<p>La formule de Kepler permet de calculer la vitesse orbitale nécessaire pour maintenir un objet en orbite autour d'un corps céleste donné. Cette formule est basée sur les lois de Kepler de la mécanique céleste, qui décrivent les mouvements des corps célestes sous l'influence de la gravité.</p>
-
-<p>  La formule de Kepler pour calculer la vitesse orbitale est la suivante :</p>
-  
- <p> V = sqrt(GM/R)</p>
-  
-  Où :</br>
-  
-<P>      V est la vitesse orbitale en m/s</P> 
-<P>      G est la constante gravitationnelle (6,67430 × 10^-11 m^3 kg^-1 s^-2)</P> 
-<P>      M est la masse du corps céleste (en kg)</P> 
-<P>       R est la distance du corps céleste au centre de la Terre en mètres (rayon du corps  céleste + altitude du corps)</P> 
-  
-<P>   La formule indique que plus l'altitude d'un objet est élevée, plus la vitesse orbitale nécessaire pour maintenir cet objet en orbite sera faible. Cela est dû au fait que plus l'objet est éloigné du corps céleste, moins la force gravitationnelle exercée sur lui est forte.</P> 
-  
-<P>   Il est important de noter que la formule de Kepler ne tient pas compte de la résistance atmosphérique ou de la force de frottement, qui peuvent affecter la vitesse orbitale réelle d'un objet en orbite. Cependant, la formule fournit une approximation raisonnable de la vitesse orbitale nécessaire pour maintenir un objet en orbite à une altitude donnée.</p>
-
-<u><h2>Utilisation de la formule de Kepler pour créer un simulateur de vitesse orbitale</h2></u>
-<p>   Maintenant que nous avons vu comment calculer la vitesse orbitale à une altitude donnée à l'aide de la formule de Kepler, nous pouvons utiliser cette formule pour créer un simulateur de vitesse orbitale.</p>
-<p>Le simulateur prendra en entrée l'altitude à laquelle l'objet se trouve, en mètres, et calculera la vitesse orbitale correspondante en utilisant la formule de Kepler. Le simulateur affichera ensuite la vitesse orbitale calculée, ainsi qu'un graphique dynamique montrant comment la vitesse orbitale varie en fonction de l'altitude.</p>
-<p>Pour créer ce simulateur, nous utiliserons le langage de programmation Python et la bibliothèque de visualisation de données Matplotlib. Tout d'abord, nous définirons la constante gravitationnelle et la masse de la Terre comme des variables :</p>
-
-<p>G = 6.67430e-11 # constante gravitationnelle en m^3/kg*s^2</p>
-<p>M = 5.97e24 # masse de la Terre en kg</p>
-
-<p>Ensuite, nous définirons une fonction qui prendra en entrée l'altitude en mètres et calculera la vitesse orbitale correspondante en utilisant la formule de Kepler :</p>
-<pre>
-  import matplotlib.pyplot as plt
-
-  altitudes = range(0, 2000000, 10000) # altitudes de 0 à 2 000 000 mètres par pas de 10 000 mètres
-  vitesses = [calculer_vitesse_orbitale(a) for a in altitudes]
-
-  plt.plot(altitudes, vitesses)
-  plt.title("Vitesse orbitale en fonction de l'altitude")
-  plt.xlabel("Altitude (m)")
-  plt.ylabel("Vitesse orbitale (m/s)")
-  plt.show()
-</pre>
-<p>Ce code produira un graphique qui montre comment la vitesse orbitale varie en fonction de l'altitude, ce qui permet de visualiser comment la formule de Kepler s'applique à différents altitudes.</p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
- {% endblock %}
+{% load static %}
+<div class="competences">
+  <div class="grilles">
+    <a href="personnalite.html" class="colonne">
+      <img src="{% static 'img/bio.png' %}" alt="Oasys" width="90" height="90">
+      <div class="contenu">
+        <h2>Difficile de trouver sa voie lorsque plusieurs choses nous semblent si passionantes</h2>
+        <p>J'aime la créativité. Mon super pouvoir de rêve, c'est d'être designer et de pouvoir redessiner le monde à travers tout ce que je touche.</p>
+      </div>
+    </a>
+    <a href="article_IA.html" class="colonne">
+      <img src="{% static 'img/IA1.png' %}" alt="IA" width="90" height="90">
+      <div class="contenu">
+         <h2>Une Révolution Futuriste en Marche</h2>
+        <p>Nous vivons une époque où la fiction devient réalité, où les rêves d'hier deviennent les réalisations d'aujourd'hui grâce aux avancées fulgurantes de l'intelligence artificielle.</p>
+      </div>
+    </a>
+   <a href="https://1lettre1sourire.org/notre-blog/une-soiree-memorable-lavant-premiere-de-maison-de-retraite-2-a-hec-paris/" class="colonne">
+     <img src="https://1lettre1sourire.org/wp-content/uploads/2024/02/Sans-titre1.jpg" width="90" height="90">
+      <div class="contenu">
+         <h2>Une Soirée Mémorable : L’Avant-Première de “Maison de Retraite 2” à HEC Paris</h2>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}
